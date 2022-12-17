@@ -1,0 +1,366 @@
+import pyttsx3
+import speech_recognition as sr
+import datetime
+import wikipedia
+import webbrowser
+import os
+import subprocess
+import wolframalpha
+import pyjokes
+import json
+import random
+import winshell
+import feedparser
+import shutil
+import requests
+from instabot import Bot
+import pywhatkit as kt
+import getpass as gp
+from PIL import ImageTk,Image
+import PyPDF2
+from twilio.rest import Client
+from bs4 import BeautifulSoup
+import win32com.client as wincl
+from urllib.request import urlopen
+
+voiceEngine = pyttsx3.init('sapi5')
+voices = voiceEngine.getProperty('voices')
+voiceEngine.setProperty('voice', voices[1].id)
+
+def speak(text):
+    voiceEngine.say(text)
+    voiceEngine.runAndWait()
+
+def wish():
+    print("Wishing.")
+    time = int(datetime.datetime.now().hour)
+    global uname,asname
+    if time>= 0 and time<12:
+        speak("Good Morning!")
+
+    elif time<18:
+        speak("Good Afternoon!")
+
+    else:
+        speak("Good Evening!")
+
+    asname ="VC"
+    speak("I am your Voice Assistant Buddy,")
+    speak(asname)
+    print("I am your Voice Assistant,",asname)
+    
+def getName():
+    global uname
+    speak("Can I please know your name?")
+    uname = takeCommand()
+    print("Name:",uname)
+    speak("I am glad to know you!")
+    columns = shutil.get_terminal_size().columns
+    speak("How can i Help you, ")
+    speak(uname)
+
+def takeCommand():
+    recog = sr.Recognizer()
+    
+    with sr.Microphone() as source:
+        print("Listening to the user")
+        recog.pause_threshold = 1
+        userInput = recog.listen(source)
+
+    try:
+        print("Recognizing the command")
+        command = recog.recognize_google(userInput, language ='en-in')
+        print(f"Command is: {command}\n")
+
+    except Exception as e:
+        print(e)
+        print("Unable to Recognize the voice.")
+        return "None"
+
+    return command
+    
+def clean_up(i):
+    dir = "config"
+    remove_me = "imgs\{}.REMOVE_ME".format(i)
+    # checking whether config folder exists or not
+    if os.path.exists(dir):
+        try:
+            # removing it so we can upload new image
+            shutil.rmtree(dir)
+        except OSError as e:
+            print("Error: %s - %s." % (e.filename, e.strerror))
+    if os.path.exists(remove_me):
+        src = os.path.realpath("imgs\{}".format(i))
+        os.rename(remove_me, src)
+
+def upload_to_instagram(image_file_name):
+    bot = Bot()
+    bot.login(username="voiceassistant1", password="surya@2021")
+    bot.upload_photo(image_file_name, caption="Insta Bot testing")
+    # after uploading the file name is changed into name+remove me
+    '''resized_file_name = resized_file_name + 'REMOVE_ME'
+    try:
+        os.remove(resized_file_name)  # deletes the resized image
+    except:
+        print("Error occured while deleting resized image file")'''
+
+def whatsapp(message):
+    p_num = gp.getpass(prompt='Phone number:(country code) ', stream=None)
+    hour= int(input("Hours(24hrs format): "))
+    minutes=  int(input("Minutes): "))
+    msg = message
+    kt.sendwhatmsg(p_num, msg, hour, minutes)
+    print("Message sent")
+    
+def getNews():
+    try:
+        response = requests.get('https://www.bbc.com/news')
+  
+        b4soup = BeautifulSoup(response.text, 'html.parser')
+        headLines = b4soup.find('body').find_all('h3')
+        unwantedLines = ['BBC World News TV', 'BBC World Service Radio',
+                    'News daily newsletter', 'Mobile app', 'Get in touch']
+
+        for x in list(dict.fromkeys(headLines)):
+            if x.text.strip() not in unwantedLines:
+                speak(x.text.strip())
+                print(x.text.strip())
+    except Exception as e:
+        print(str(e))
+
+def read_pdf(filename):
+    # path of the PDF file
+    path = open(filename, 'rb')
+    # creating a PdfFileReader object
+    pdfreader = PyPDF2.PdfFileReader(path)
+    # return number of pages
+    numpages = pdfreader.numPages
+    # print number of pages
+    print(numpages)
+    speak(f"There are {numpages} pages in the pdf file. Which page should I read?")
+    page_no = takeCommand()
+    page_no = int(page_no)
+    # the page with which you want to start
+    page = pdfreader.getPage(page_no)
+    # extracting the text from the PDF
+    text = page.extractText()
+    print(text)
+    # reading the text
+    speak(text)
+
+def callVoiceAssistant():
+    if __name__ == '__main__':
+        uname=''
+        asname=''
+        os.system('cls')
+        wish()
+        getName()
+        print(uname)
+        
+        while True:
+            command = takeCommand().lower()
+            print(command)
+            
+            if "VC" in command:
+                wish()
+            
+            elif 'how are you' in command:
+                speak("I am fine, Thank you")
+                speak("How are you, ")
+                speak(uname)
+                
+            elif "good morning" in command or "good afternoon" in command or "good evening" in command:
+                speak("A very" +command)
+                speak("Thank you for wishing me! Hope you are doing well!")
+                
+            elif 'fine' in command or "good" in command:
+                speak("It's good to know that your fine")
+                
+            elif "who are you" in command:
+                speak("I am your virtual assistant VC.")
+                
+            elif "change my name to" in command:
+                speak("What would you like me to call you, Sir or Madam ")
+                uname = takeCommand()
+                speak('Hello again,')
+                speak(uname)
+                
+            elif "what's your name" in command:
+                speak("People call me")
+                asname ="VC"
+                speak(asname)
+                
+            elif 'time' in command:
+                strTime = datetime.datetime.now()
+                curTime=str(strTime.hour)+"hours"+str(strTime.minute)+"minutes"+str(strTime.second)+"seconds"
+                speak(uname)
+                speak(f" the time is {curTime}")
+                print(curTime)
+                
+            elif 'wikipedia' in command:
+                speak('Searching Wikipedia')
+                command = command.replace("wikipedia", "")
+                results = wikipedia.summary(command, sentences = 3)
+                speak("These are the results from Wikipedia")
+                print(results)
+                speak(results)
+                
+            elif 'open youtube' in command:
+                speak("Here you go, the Youtube is opening\n")
+                webbrowser.open("youtube.com")
+                
+            elif 'open google' in command:
+                speak("Opening Google\n")
+                webbrowser.open("google.com")
+                
+            elif 'play music' in command or "play song" in command:
+                speak("Enjoy the music!")
+                music_dir = "C:\\Users\\SAHITHI GILLA\\Music" 
+                songs = os.listdir(music_dir)
+                print(songs)
+                random = os.startfile(os.path.join(music_dir, songs[1]))
+                
+            elif 'joke' in command:
+                speak(pyjokes.get_joke())
+                
+            elif 'upload to instagram' in command:
+                try:
+                    speak("Which image should I upload?")
+                    image_file_name = takeCommand()
+                    image_file_name = image_file_name + '.jpg'
+                    image_file_name = image_file_name.lower()
+                    # speak("what is the caption?")
+                    # print("what is the caption?")
+                    # caption = takeCommand()
+                    if os.path.isfile(image_file_name):
+                        clean_up(image_file_name)
+                        upload_to_instagram(image_file_name)
+                        speak("Image uploaded to Instagram")
+                    else:
+                        speak("The file you specified does not exist.")
+                except Exception as e:
+                    print(e)
+                    speak("Sorry my friend. I am not able to upload this image")
+            
+            elif 'whatsapp' in command:
+                try:
+                    speak("What message should I send?")
+                    message = takeCommand()
+                    whatsapp(message)
+                except Exception as e:
+                    print(e)
+                    speak("Sorry my friend. I am not able to send message")
+
+            elif 'read the book' in command:
+                try:
+                    speak("Which book should I read?")
+                    pdf_file_name = takeCommand()
+                    pdf_file_name = pdf_file_name + '.pdf'
+                    pdf_file_name = pdf_file_name.lower()
+                    if os.path.isfile(pdf_file_name):
+                        read_pdf(pdf_file_name)
+                    else:
+                        speak("The file you specified does not exist.")
+                except Exception as e:
+                    print(e)
+                    
+            elif "will you be my gf" in command or "will you be my bf" in command:
+                speak("I'm not sure about that, may be you should give me some time")
+                
+            elif "i love you" in command:
+                speak("Thank you! But, It's a pleasure to hear it from you.")
+                
+            elif "weather" in command:
+                api_key = "3534682dfce338a5d50c15f8f4975af1"
+                base_url = "https://api.openweathermap.org/data/2.5/weather?"
+                speak("what is the city name")
+                print("what is the city name")
+                city_name = takeCommand()
+                print(city_name)
+                complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+                response = requests.get(complete_url)
+                x = response.json()
+                if x["cod"] != "404":
+                    y = x["main"]
+                    current_temperature = y["temp"]
+                    current_humidiy = y["humidity"]
+                    z = x["weather"]
+                    weather_description = z[0]["description"]
+                    speak(" Temperature in kelvin unit is " +str(current_temperature) +"\n humidity in percentage is " +str(current_humidiy) +"\n description  " +str(weather_description))
+                    print(" Temperature in kelvin unit = " +str(current_temperature) +"\n humidity (in percentage) = " +str(current_humidiy) +"\n description = " +str(weather_description))
+
+                else:
+                    speak(" City Not Found ")
+                
+            elif "what is" in command or "who is" in command:
+                client = wolframalpha.Client("A4YG86-TKVLWRTG6X")
+                res = client.query(command)
+                
+                try:
+                    print (next(res.results).text)
+                    speak (next(res.results).text)
+                    
+                except StopIteration:
+                    command = command.replace("wikipedia", "")
+                    results = wikipedia.summary(command, sentences=2)
+                    speak("According to my information")
+                    print(results)
+                    speak(results)
+                    
+            elif 'search' in command:
+                command = command.replace("search", "")
+                webbrowser.open(command)
+                
+            elif 'news' in command:
+                getNews()
+                
+            elif "don't listen" in command or "stop listening" in command:
+                speak("for how much time you want to stop me from listening commands")
+                a = int(takeCommand())
+                time.sleep(a)
+                print(a)
+                
+            elif 'shutdown system' in command:
+                speak("Hold On a Sec ! Your system is on its way to shut down")
+                subprocess.call('shutdown / p /f')
+                
+            elif "restart" in command:
+                subprocess.call(["shutdown", "/r"])
+                
+            elif "sleep" in command:
+                speak("Setting in sleep mode")
+                subprocess.call("shutdown / h")
+                
+            elif "write a note" in command:
+                speak("What should i write,")
+                note = takeCommand()
+                file = open('notes.txt', 'w')
+                file.write(note)
+
+            elif 'exit' in command:
+                speak("Thanks for giving me your time")
+                exit()
+                
+            else:
+                speak("Sorry, I am not able to understand you")
+
+import tkinter as tk
+#from tk import StringVar
+wn = tk.Tk() 
+wn.title("Voice Control Assistant")
+img=ImageTk.PhotoImage(file ='va_1.png')
+w=img.width()
+h=img.height()
+wn.geometry('%dx%d+0+0'%(w,h))
+
+v1=tk.Label(wn,text='Welcome to meet the VC Assistant', image=img,fg='blue', font=('Courier', 15)).place(x=00, y=0)
+
+#Button to convert PDF to Audio form
+b1=tk.Button(wn, text="Start", bg='white',font=('Courier', 15),command=callVoiceAssistant).place(x=660, y=300)
+
+showCommand=tk.StringVar()
+cmdLabel=tk.Label(wn, textvariable=showCommand,fg='black', font=('Courier', 15))
+cmdLabel.place(x=200, y=150)
+
+#Runs the window till it is closed
+wn.mainloop()

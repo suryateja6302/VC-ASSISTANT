@@ -16,7 +16,7 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 <h2>UPLOADING PICTURE IN INSTAGRAM</h2>
 <div align="center">
 	<img width = "100%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c767b4a0-8af2-421e-b190-fd35d793e875">
-<img width = "100%" src="![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4175cd72-999b-4311-a9db-6b4e1c6911e3)">
+<img width = "100%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4175cd72-999b-4311-a9db-6b4e1c6911e3">
 </div>
 
 <h2>CHATING ON WATSAPP</h2>

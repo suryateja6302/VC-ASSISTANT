@@ -12,10 +12,10 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 
 
                                            <h2>NEWS</h2>
+					   
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4f5d129b-7fe5-4459-84e7-cbc1021644a9)
 
 <h2>WEATHER UPDATES</h2>
-
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c3e10422-42e3-4b0b-9479-16a7dca05d8f)
 <h2>UPLOADING PICTURE IN INSTAGRAM</h2>
 <div align="center">

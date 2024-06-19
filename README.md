@@ -27,3 +27,4 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/07911c39-558d-4bea-ade1-bc9d708e58d3)
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/6f5498cd-0b8c-45c7-9ae2-d9e025c0892b)
 
+  

@@ -7,7 +7,7 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/dca74594-d523-4b0d-8177-76cd58e7c6a9)
 
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/83c6c422-9951-41d2-94df-b19145879160)
-                                           ***NEWS***
+                                           *****NEWS*****
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4f5d129b-7fe5-4459-84e7-cbc1021644a9)
 
 **WEATHER UPDATES**

@@ -6,7 +6,7 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 
 
 <div align="center">
-	<img width = "400" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/dca74594-d523-4b0d-8177-76cd58e7c6a9">
+	<img width = "400" height="300"  src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/dca74594-d523-4b0d-8177-76cd58e7c6a9">
         <img  width = "425" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/83c6c422-9951-41d2-94df-b19145879160">
 </div>
                                            <h2>NEWS</h2>

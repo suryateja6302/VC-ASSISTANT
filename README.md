@@ -10,17 +10,16 @@ we create a GUI with a button that starts the voice assistant by calling the fun
                                            <h2>NEWS</h2>
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4f5d129b-7fe5-4459-84e7-cbc1021644a9)
 
-**WEATHER UPDATES**
+<h2>WEATHER UPDATES</h2>
 
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c3e10422-42e3-4b0b-9479-16a7dca05d8f)
-**UPLOADING PICTURE IN INSTAGRAM**
+<h2>UPLOADING PICTURE IN INSTAGRAM</h2>
 <div align="center">
 	<img width = "100%" src="![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c767b4a0-8af2-421e-b190-fd35d793e875)">
 <img width = "100%" src="![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4175cd72-999b-4311-a9db-6b4e1c6911e3)">
 </div>
 
-**
-CHATING ON WATSAPP**
+<h2>CHATING ON WATSAPP</h2>
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/07911c39-558d-4bea-ade1-bc9d708e58d3)
 ![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/6f5498cd-0b8c-45c7-9ae2-d9e025c0892b)
 

@@ -17,16 +17,27 @@ we create a GUI with a button that starts the voice assistant by calling the fun
         <img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4175cd72-999b-4311-a9db-6b4e1c6911e3">
 </div>
 
-                                          <div> <h2>NEWS</h2>
-					   
-![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/4f5d129b-7fe5-4459-84e7-cbc1021644a9)</div>
-
-<h2>WEATHER UPDATES</h2>
-![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c3e10422-42e3-4b0b-9479-16a7dca05d8f)
-
+<h2>NEWS</h2>				   
+<div align="center">
+	<img width = "100%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/b12efc92-0ead-40b6-b21d-68c3e371354b">
+        
+</div>
 
 <h2>CHATING ON WATSAPP</h2>
-![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/07911c39-558d-4bea-ade1-bc9d708e58d3)
-![image](https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/6f5498cd-0b8c-45c7-9ae2-d9e025c0892b)
+<div align="center">
+	<img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c441f720-7f8b-4f22-bb5e-bad16e639357">
+        <img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/467e5f13-1319-45a4-be51-033e1ae2fa65">
+        
+</div>
+
+
+<h2>WEATHER UPDATES</h2>
+<div align="center">
+	<img width = "100%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/b46c34bc-43a2-4baa-94ec-bbb7d38b3acb">
+        
+</div>
+
+
+
 
   

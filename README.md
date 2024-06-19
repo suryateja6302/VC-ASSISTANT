@@ -24,11 +24,6 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 </div>
 
 <h2>CHATING ON WATSAPP</h2>
-<div align="center">
-	<img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/c441f720-7f8b-4f22-bb5e-bad16e639357">
-        <img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/467e5f13-1319-45a4-be51-033e1ae2fa65">
-        
-</div>
 
 
 <h2>WEATHER UPDATES</h2>

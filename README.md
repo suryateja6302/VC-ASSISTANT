@@ -20,14 +20,14 @@ we create a GUI with a button that starts the voice assistant by calling the fun
 
 <h2>NEWS</h2>				   
 <div align="center">
-	<img width = "100%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/b12efc92-0ead-40b6-b21d-68c3e371354b">
+	<img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/b12efc92-0ead-40b6-b21d-68c3e371354b">
         
 </div>
 
 <h2>CHATING ON WATSAPP</h2>
 <div align="center">
-	<img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/7cad2727-4f9b-479a-8d7f-41c1029803f7">
-        <img width = "50%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/602ddcff-9226-4ce8-9c1f-02b50f7c0cc2">
+	<img width = "75%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/7cad2727-4f9b-479a-8d7f-41c1029803f7">
+        <img width = "75%" src="https://github.com/suryateja6302/VC-ASSISTANT/assets/111578838/602ddcff-9226-4ce8-9c1f-02b50f7c0cc2">
 </div>
 
 
